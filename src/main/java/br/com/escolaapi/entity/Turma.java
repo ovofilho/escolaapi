@@ -20,8 +20,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 
 /**
  *
@@ -40,7 +38,6 @@ public class Turma {
     @ManyToMany(cascade = {
     CascadeType.ALL
     })
-    @JsonBackReference("turma")
     @JoinTable(name = "turma_aluno",
     joinColumns = @JoinColumn(name = "idTurma"),
     inverseJoinColumns = @JoinColumn(name = "idAluno"))
@@ -79,10 +76,6 @@ public class Turma {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public void setEscola(Escola escola){
-        this.escola = escola;
     }
 
     

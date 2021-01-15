@@ -18,9 +18,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import static org.springframework.data.jpa.domain.AbstractPersistable_.id; //duvida aqui
 
 /**
@@ -46,7 +43,6 @@ public class Aluno {
     inverseJoinColumns = @JoinColumn(name = "id"))*/
     
     @ManyToMany(mappedBy = "alunos")
-    @JsonBackReference("alunos")
     private List<Turma> turmas = new ArrayList<>(); //lista de turmas do aluno
     
     @Column(nullable = false)

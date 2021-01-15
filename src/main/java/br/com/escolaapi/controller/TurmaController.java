@@ -9,7 +9,6 @@ import br.com.escolaapi.entity.Aluno;
 import java.util.List;
 import java.util.Optional;
 
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -59,12 +58,13 @@ public class TurmaController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    /*
     @RequestMapping(value = "/turma", method =  RequestMethod.POST, produces="application/json", consumes="application/json")
     public Turma Post(@Valid @RequestBody Turma turma)
     {
         return _turmaRepository.save(turma);
-    }
-
+    }*/
+/*
     @RequestMapping(value = "/turma/{id}", method =  RequestMethod.PUT, produces="application/json", consumes="application/json")
     public ResponseEntity<Turma> Put(@PathVariable(value = "id") long id, @Valid @RequestBody Turma newTurma)
     {
@@ -77,7 +77,7 @@ public class TurmaController {
         }
         else
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
+    }*/ //A turma só pode ser cadastrada pela escola.
     
     @RequestMapping(value = "/turma/{turmaid}/matricular/{alunoidAluno}", method =  RequestMethod.POST, produces="application/json")
     public ResponseEntity<Turma> Matricular(@PathVariable(value = "turmaid") long id, @PathVariable(value = "alunoidAluno") long idAluno)
