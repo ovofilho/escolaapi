@@ -90,6 +90,7 @@ public class EscolaController {
         Optional<Escola> escoladb = _escolaRepository.findById(idEscola);
         if(escoladb.isPresent()){
             Escola escola = escoladb.get();
+            newTurma.setEscola(escola);
             Turma turma = _turmaRepository.save(newTurma);
             
                 escola.addTurma(turma);

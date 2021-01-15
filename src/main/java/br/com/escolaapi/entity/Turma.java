@@ -78,6 +78,10 @@ public class Turma {
         this.nome = nome;
     }
 
+    public void setEscola(Escola escola){
+        this.escola = escola;
+    }
+
     
     
     
