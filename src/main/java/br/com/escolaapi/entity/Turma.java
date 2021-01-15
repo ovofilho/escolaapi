@@ -20,6 +20,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 /**
  *
@@ -38,6 +40,7 @@ public class Turma {
     @ManyToMany(cascade = {
     CascadeType.ALL
     })
+    @JsonBackReference("turma")
     @JoinTable(name = "turma_aluno",
     joinColumns = @JoinColumn(name = "idTurma"),
     inverseJoinColumns = @JoinColumn(name = "idAluno"))
